@@ -1,6 +1,6 @@
 {
   "name": "indigodb",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "ORM for PostgreSQL and MongoDB with real-time support",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
