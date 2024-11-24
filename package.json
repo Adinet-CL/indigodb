@@ -17,8 +17,24 @@
     "WebSockets",
     "TypeScript"
   ],
-  "author": "Sergio Galaz",
+  "author": {
+    "name": "Sergio Galaz",
+    "email": "sergiogalaz60@gmail.com"
+  },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chechooxd/indigodb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chechooxd/indigodb/issues"
+  },
+  "homepage": "https://github.com/chechooxd/indigodb#readme",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "dependencies": {
     "dotenv": "^16.4.5",
     "events": "^3.3.0",
