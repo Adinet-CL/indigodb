@@ -1,5 +1,5 @@
 {
-  "name": "indigodb",
+  "name": "@adinet/indigodb",
   "version": "0.1.0",
   "description": "ORM for PostgreSQL and MongoDB with real-time support",
   "main": "dist/index.js",
@@ -24,12 +24,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/chechooxd/indigodb.git"
+    "url": "https://github.com/Adinet-CL/indigodb"
   },
   "bugs": {
-    "url": "https://github.com/chechooxd/indigodb/issues"
+    "url": "https://github.com/Adinet-CL/indigodb/issues"
   },
-  "homepage": "https://github.com/chechooxd/indigodb#readme",
+  "homepage": "https://github.com/Adinet-CL/indigodb#readme",
   "files": [
     "dist",
     "README.md",
