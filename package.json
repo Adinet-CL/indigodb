@@ -1,20 +1,35 @@
 {
   "name": "@adinet/indigodb",
-  "version": "1.0.2",
-  "description": "ORM for PostgreSQL and MongoDB with real-time support",
+  "version": "2.0.0",
+  "private": true,
+  "description": "ORM for PostgreSQL and MongoDB with optional real-time support via WebSockets",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "test": "jest",
-    "prepublishOnly": "npm run build"
+    "build": "pnpm -r run build",
+    "dev": "pnpm -r run dev",
+    "clean": "find . -name 'dist' -type d -exec rm -rf {} +",
+    "test": "vitest run",
+    "test:ui": "vitest --ui",
+    "test:watch": "vitest watch",
+    "coverage": "vitest run --coverage",
+    "turbo:build": "turbo run build",
+    "turbo:dev": "turbo run dev",
+    "turbo:test": "turbo run test",
+    "turbo:clean": "turbo run clean"
   },
+  "workspaces": [
+    "packages/*",
+    "packages/adapters/*"
+  ],
   "keywords": [
     "ORM",
     "PostgreSQL",
     "MongoDB",
-    "Real-time",
-    "WebSockets",
+    "Realtime",
+    "WebSocket",
+    "Database",
+    "Prisma",
     "TypeScript"
   ],
   "author": {
@@ -37,20 +52,15 @@
   ],
   "dependencies": {
     "dotenv": "^16.4.5",
-    "events": "^3.3.0",
-    "mongodb": "^6.11.0",
-    "mongoose": "^6.0.12",
-    "pg": "^8.7.1"
+    "events": "^3.3.0"
   },
   "devDependencies": {
-    "@types/jest": "^29.0.0",
-    "@types/mongodb": "^4.0.7",
-    "@types/node": "^16.11.7",
-    "@types/pg": "^8.11.10",
-    "@types/ws": "^8.5.13",
-    "jest": "^29.0.0",
-    "ts-jest": "^29.0.0",
-    "typescript": "^4.4.4",
-    "ws": "^8.18.0"
+    "@types/node": "^20.5.6",
+    "@vitest/coverage-c8": "^0.33.0",
+    "@vitest/ui": "^3.1.2",
+    "tsup": "^8.4.0",
+    "turbo": "^2.5.1",
+    "typescript": "^5.3.3",
+    "vitest": "^3.1.2"
   }
 }
