@@ -3,10 +3,10 @@ import { defineConfig } from 'vitest/config'
 export default defineConfig({
   test: {
     globals: true,
-    environment: 'node',
+    environment: "node",
     coverage: {
-      reporter: ['text', 'json', 'html']
+      reporter: ["text", "json", "html"],
     },
-    include: ['packages/**/*.test.ts']
-  }
-})
+    include: ["packages/**/*.spec.ts"],
+  },
+});
