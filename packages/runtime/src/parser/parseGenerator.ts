@@ -1,12 +1,12 @@
 import type { ParsedSchema } from './interfaces'
 
 export function parseGenerator(lines: string[]): ParsedSchema['generator'] {
-  const result = { provider: '' }
+  const kv = Object.fromEntries(
+    lines
+      .filter((line) => line.includes("="))
+      .map((line) => line.split("="))
+      .map(s => s.trim().replace(/"/g, ''))
+  );
 
-  for (const line of lines) {
-    const [key, val] = line.split('=').map(p => p.trim().replace(/^"|"$/g, ''))
-    if (key === 'provider') result.provider = val
-  }
-
-  return result
+  return { provider: kv.provider ?? ''};
 }

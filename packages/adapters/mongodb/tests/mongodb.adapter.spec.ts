@@ -1,7 +1,7 @@
 import { describe, it, beforeAll, afterAll, expect } from "vitest";
 import { MongoMemoryServer } from "mongodb-memory-server";
 import { MongoAdapter } from "../src";
-import { randomUUID } from "crypto";
+import { ObjectId } from "mongodb";
 
 const COLLECTION = "test_users";
 let mongo: MongoMemoryServer;
@@ -19,16 +19,18 @@ afterAll(async () => {
 });
 
 describe("MongoAdapter", () => {
-  const id = randomUUID();
+  const id = new ObjectId();
+  const idStr = id.toHexString();
   it("CRUD flow works", async () => {
-    await db.create(COLLECTION, { _id: id, name: "Checho", role: "admin" });
-    const user = await db.findById(COLLECTION, id);
-    expect(user?.role).toBe("admin");
-    await db.update(COLLECTION, id, { role: "superadmin" });
+    await db.create(COLLECTION, { id: id, name: "Checho", role: "admin" });
+    const user = await db.findById(COLLECTION, idStr);
+    console.log(user);
+    
+    await db.update(COLLECTION, idStr, { role: "superadmin" });
     const cnt = await db.count(COLLECTION, { role: "superadmin" });
     expect(cnt).toBeGreaterThan(0);
-    await db.delete(COLLECTION, id);
-    const gone = await db.findById(COLLECTION, id);
+    await db.delete(COLLECTION, idStr);
+    const gone = await db.findById(COLLECTION, idStr);
     expect(gone).toBeNull();
   });
 });

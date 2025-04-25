@@ -1,15 +1,19 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, beforeAll } from "vitest";
 import { execa } from "execa";
-import { join } from "path";
+import { join, resolve } from "path";
 import { tmpdir } from "os";
 import { mkdtempSync } from "fs";
 
 describe("CLI init", () => {
   it("generates files", async () => {
     const dir = mkdtempSync(join(tmpdir(), "indigodb-"));
-    await execa("node", ["../../dist/cli", "init", "--yes"], { cwd: dir });
-    const fs = await import("fs/promises");
-    const files = await fs.readdir(dir);
+
+    await execa("pnpm", ["--filter", "cli", "run", "build"]);
+
+    const cliDist = resolve(__dirname, "../../dist/cli/index.js");
+    await execa("node", [cliDist, "init", "--yes"], { cwd: dir });
+
+    const files = await(await import("fs/promises")).readdir(dir);
     expect(files).toContain("indigodb.schema");
     expect(files).toContain(".env");
   });

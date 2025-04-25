@@ -1,6 +1,7 @@
 {
   "name": "@adinet/indigodb",
   "version": "2.0.0",
+  "packageManager": "pnpm@9.5.0",
   "private": true,
   "description": "ORM for PostgreSQL and MongoDB with optional real-time support via WebSockets",
   "main": "dist/index.js",
@@ -60,6 +61,7 @@
     "@types/node": "^20.5.6",
     "@types/ws": "^8.18.1",
     "@vitest/coverage-c8": "^0.33.0",
+    "@vitest/coverage-v8": "3.1.2",
     "@vitest/ui": "^3.1.2",
     "execa": "^9.5.2",
     "mongodb-memory-server": "^10.1.4",

@@ -3,7 +3,7 @@ import { createClient } from '../src/createClient'
 import { DatabaseClient } from '@adinet/indigodb-core'
 
 // mocks falsos para adaptadores
-vi.mock('@adinet/indigodb-adapters-postgresql', () => {
+vi.mock('@adinet/indigodb-adapter-postgresql', () => {
   return {
     PostgreSQLAdapter: class {
       connect = vi.fn()
@@ -17,7 +17,7 @@ vi.mock('@adinet/indigodb-adapters-postgresql', () => {
   }
 })
 
-vi.mock('@adinet/indigodb-adapters-mongodb', () => {
+vi.mock('@adinet/indigodb-adapter-mongodb', () => {
   return {
     MongoAdapter: class {
       connect = vi.fn()

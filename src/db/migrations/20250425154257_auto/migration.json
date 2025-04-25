@@ -1,0 +1,25 @@
+{
+  "id": "20250425154257_auto",
+  "provider": "postgresql",
+  "appliedAt": "2025-04-25T15:42:57.861Z",
+  "models": [
+    "User"
+  ],
+  "actions": [
+    {
+      "type": "create_table",
+      "table": "User",
+      "fields": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "primary": true
+        },
+        {
+          "name": "name",
+          "type": "TEXT"
+        }
+      ]
+    }
+  ]
+}

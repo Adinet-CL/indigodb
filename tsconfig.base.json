@@ -12,7 +12,10 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "dist",
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals"],
+    "paths": {
+      "@adinet/indigodb-core": ["packages/core/src"]
+    }
   },
   "exclude": ["node_modules", "dist"]
 }

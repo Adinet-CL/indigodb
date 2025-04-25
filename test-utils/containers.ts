@@ -1,7 +1,7 @@
 import { PostgreSqlContainer } from "@testcontainers/postgresql";
 import { MongoDBContainer }    from "@testcontainers/mongodb";
 
-export interface StartedDB {
+interface StartedDB {
   url: string;
   stop(): Promise<void>;
 }
@@ -33,3 +33,5 @@ export async function mongoContainer(): Promise<StartedDB> {
     },
   };
 }
+
+export type { StartedDB  };
