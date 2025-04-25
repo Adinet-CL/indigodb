@@ -1,6 +1,7 @@
 {
   "name": "@adinet/indigodb-cli",
   "version": "0.0.1",
+  "private": true,
   "bin": {
     "indigodb": "src/index.ts"
   },
@@ -12,6 +13,8 @@
   },
   "dependencies": {
     "@adinet/indigodb-core": "workspace:*",
-    "commander": "^11.0.0"
+    "@adinet/indigodb-runtime": "workspace:*",
+    "commander": "^11.0.0",
+    "prompts": "^2.4.2"
   }
 }
