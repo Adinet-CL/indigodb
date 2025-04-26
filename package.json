@@ -9,7 +9,7 @@
   "scripts": {
     "build": "pnpm -r run build",
     "dev": "pnpm -r run dev",
-    "clean": "find . -name 'dist' -type d -exec rm -rf {} +",
+    "clean": "rm -rf **/dist",
     "test": "vitest run",
     "test:ui": "vitest --ui",
     "test:watch": "vitest watch",
@@ -22,34 +22,6 @@
   "workspaces": [
     "packages/*",
     "packages/adapters/*"
-  ],
-  "keywords": [
-    "ORM",
-    "PostgreSQL",
-    "MongoDB",
-    "Realtime",
-    "WebSocket",
-    "Database",
-    "Prisma",
-    "TypeScript"
-  ],
-  "author": {
-    "name": "Sergio Galaz",
-    "email": "sergiogalaz60@gmail.com"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Adinet-CL/indigodb"
-  },
-  "bugs": {
-    "url": "https://github.com/Adinet-CL/indigodb/issues"
-  },
-  "homepage": "https://github.com/Adinet-CL/indigodb#readme",
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
   ],
   "dependencies": {
     "dotenv": "^16.4.5",

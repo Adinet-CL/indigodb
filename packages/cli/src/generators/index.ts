@@ -1,6 +1,0 @@
-export * from './generateProject'
-export * from './generateEnv'
-export * from './generateSchema'
-export * from './generateConfig'
-export * from './generateMain'
-export * from './installDependencies'
